@@ -8,7 +8,6 @@ export default function Movie(props) {
         <p>{props.movie.title}</p>
       </div>
       <div className="description">
-        <hr />
         <p>{props.movie.description}</p>
         <hr />
       </div>
