@@ -1,0 +1,57 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+background-image:linear-gradient(to left, rgb(56, 7, 55),rgb(183, 76, 180), rgb(245, 166, 242))
+}
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  margin: auto;
+}
+
+.movies{
+  margin-bottom: 20px;
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+  background-image: url('https://data.whicdn.com/images/49013526/large.jpg');
+  background-size: cover;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px rgb(56, 7, 55);
+}
+h1{
+  color: white;
+}
+.data{
+  display: flex;
+}
+
+.title{
+  text-align: right;
+  text-decoration: underline;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: 'Amatic SC', cursive;
+}
+
+.description{
+  margin-top: 20px;
+}
+p{
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Amatic SC', cursive;
+}
+button{
+  margin-right: 10px;
+}
