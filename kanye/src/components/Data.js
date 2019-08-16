@@ -1,29 +1,27 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { GET_DATA_SUCCESS } from "../store/actions";
-import axios from "axios";
+import React from "react";
+import { connect } from "react-redux";
 import Movie from "./Movie";
+import { getAnime } from "../store/actions";
 
-export default function TitleName(props) {
-  const dispatch = useDispatch();
-  const state = useSelector(state => state);
-
-  useEffect(() => {
-    axios
-      .get("https://ghibliapi.herokuapp.com/films/")
-      .then(res => {
-        console.log(res.data);
-        dispatch({ type: GET_DATA_SUCCESS, payload: res.data });
-      })
-      .catch(err => console.log(err.response));
-  }, []);
-
+const Data = props => {
   return (
-    <div>
-      {state.data.map(movie => {
-        return <Movie movie={movie} />;
-      })}
-    </div>
+    <>
+      <button onClick={props.getAnime}>Click here for Films</button>
+      <div className="anime-Films">
+        {props.datas.map(movie => (
+          <Movie key={movie.id} movie={movie} />
+        ))}
+      </div>
+    </>
   );
-}
+};
+
+const mapStateToProps = state => ({
+  isLoading: state.isLoading,
+  datas: state.data
+});
+
+export default connect(
+  mapStateToProps,
+  { getAnime }
+)(Data);

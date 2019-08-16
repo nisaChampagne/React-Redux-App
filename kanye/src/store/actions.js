@@ -8,7 +8,7 @@ export const getAnime = () => dispatch => {
   dispatch({ type: GET_DATA_START });
   axios
     .get(
-      "https://ghibliapi.herokuapp.com/films/58611129-2dbc-4a81-a72f-77ddfc1b1b49"
+      "https://ghibliapi.herokuapp.com/films/"
     )
     .then(res => {
       dispatch({ type: GET_DATA_SUCCESS, payload: res.data });
